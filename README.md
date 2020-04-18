@@ -1,4 +1,5 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/191111236/semantic-segmentation-on-semantic3d)](https://paperswithcode.com/sota/semantic-segmentation-on-semantic3d?p=191111236)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/191111236/3d-semantic-segmentation-on-semantickitti)](https://paperswithcode.com/sota/3d-semantic-segmentation-on-semantickitti?p=191111236)
 [![License CC BY-NC-SA 4.0](https://img.shields.io/badge/license-CC4.0-blue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
 
 # RandLA-Net: Efficient Semantic Segmentation of Large-Scale Point Clouds (CVPR 2020)
@@ -19,7 +20,7 @@ This code has been tested with Python 3.5, Tensorflow 1.11, CUDA 9.0 and cuDNN 7
  
 - Clone the repository 
 ```
-git clone https://github.com/QingyongHu/RandLA-Net && cd RandLA-Net
+git clone --depth=1 https://github.com/QingyongHu/RandLA-Net && cd RandLA-Net
 ```
 - Setup python environment
 ```
@@ -158,4 +159,4 @@ Licensed under the CC BY-NC-SA 4.0 license, see [LICENSE](./LICENSE).
 * 21/03/2020: Updating all experimental results
 * 21/03/2020: Adding pretrained models and results
 * 02/03/2020: Code available!
-* 15/11/2019: Initial release!
+* 15/11/2019: Initial release！

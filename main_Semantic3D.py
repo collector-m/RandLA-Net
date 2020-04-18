@@ -300,7 +300,7 @@ class Semantic3D:
         noise = tf.random_normal(tf.shape(transformed_xyz), stddev=cfg.augment_noise)
         transformed_xyz = transformed_xyz + noise
         rgb = features[:, :3]
-        stacked_features = tf.concat([transformed_xyz, rgb, features[:, 3:4]], axis=-1)
+        stacked_features = tf.concat([transformed_xyz, rgb], axis=-1)
         return stacked_features
 
     def init_input_pipeline(self):
@@ -337,7 +337,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--gpu', type=int, default=0, help='the number of GPUs to use [default: 0]')
     parser.add_argument('--mode', type=str, default='train', help='options: train, test, vis')
-    parser.add_argument('--mode_path', type=str, default='None', help='pretrained model path')
+    parser.add_argument('--model_path', type=str, default='None', help='pretrained model path')
     FLAGS = parser.parse_args()
 
     GPU_ID = FLAGS.gpu
@@ -355,8 +355,8 @@ if __name__ == '__main__':
     elif Mode == 'test':
         cfg.saving = False
         model = Network(dataset, cfg)
-        if FLAGS.mode_path is not 'None':
-            chosen_snap = FLAGS.mode_path
+        if FLAGS.model_path is not 'None':
+            chosen_snap = FLAGS.model_path
         else:
             chosen_snapshot = -1
             logs = np.sort([os.path.join('results', f) for f in os.listdir('results') if f.startswith('Log')])
@@ -381,5 +381,5 @@ if __name__ == '__main__':
                 pc_xyz = flat_inputs[0]
                 sub_pc_xyz = flat_inputs[1]
                 labels = flat_inputs[21]
-                Plot.draw_pc_sem_ins(pc_xyz[0, :, :], labels[0, :], cfg.num_classes + 1)
-                Plot.draw_pc_sem_ins(sub_pc_xyz[0, :, :], labels[0, 0:np.shape(sub_pc_xyz)[1]], cfg.num_classes + 1)
+                Plot.draw_pc_sem_ins(pc_xyz[0, :, :], labels[0, :])
+                Plot.draw_pc_sem_ins(sub_pc_xyz[0, :, :], labels[0, 0:np.shape(sub_pc_xyz)[1]])

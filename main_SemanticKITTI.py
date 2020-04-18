@@ -38,7 +38,7 @@ class SemanticKITTI:
         self.label_to_idx = {l: i for i, l in enumerate(self.label_values)}
         self.ignored_labels = np.sort([0])
 
-        self.val_split = 'val'
+        self.val_split = '08'
 
         self.seq_list = np.sort(os.listdir(self.dataset_path))
         self.test_scan_number = str(test_id)
@@ -192,8 +192,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--gpu', type=int, default=0, help='the number of GPUs to use [default: 0]')
     parser.add_argument('--mode', type=str, default='train', help='options: train, test, vis')
-    parser.add_argument('--test_area', type=str, default='14', help='options: 11,12,13,14,15,16,17,18,19,20,21')
-    parser.add_argument('--mode_path', type=str, default='None', help='pretrained model path')
+    parser.add_argument('--test_area', type=str, default='14', help='options: 08, 11,12,13,14,15,16,17,18,19,20,21')
+    parser.add_argument('--model_path', type=str, default='None', help='pretrained model path')
     FLAGS = parser.parse_args()
 
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
@@ -211,8 +211,8 @@ if __name__ == '__main__':
     elif Mode == 'test':
         cfg.saving = False
         model = Network(dataset, cfg)
-        if FLAGS.mode_path is not 'None':
-            chosen_snap = FLAGS.mode_path
+        if FLAGS.model_path is not 'None':
+            chosen_snap = FLAGS.model_path
         else:
             chosen_snapshot = -1
             logs = np.sort([os.path.join('results', f) for f in os.listdir('results') if f.startswith('Log')])
@@ -235,6 +235,6 @@ if __name__ == '__main__':
                 flat_inputs = sess.run(dataset.flat_inputs)
                 pc_xyz = flat_inputs[0]
                 sub_pc_xyz = flat_inputs[1]
-                labels = flat_inputs[21]
-                Plot.draw_pc_sem_ins(pc_xyz[0, :, :], labels[0, :], cfg.num_classes + 1)
-                Plot.draw_pc_sem_ins(sub_pc_xyz[0, :, :], labels[0, 0:np.shape(sub_pc_xyz)[1]], cfg.num_classes + 1)
+                labels = flat_inputs[17]
+                Plot.draw_pc_sem_ins(pc_xyz[0, :, :], labels[0, :])
+                Plot.draw_pc_sem_ins(sub_pc_xyz[0, :, :], labels[0, 0:np.shape(sub_pc_xyz)[1]])
