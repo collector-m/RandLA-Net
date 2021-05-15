@@ -59,7 +59,7 @@ Quantitative results of different approaches on S3DIS dataset (6-fold cross-vali
 
 Qualitative results of our RandLA-Net:
 
-| ![2](http://randla-net.cs.ox.ac.uk/imgs/S3DIS_area2.gif)   | ![z](http://randla-net.cs.ox.ac.uk/imgs/S3DIS_area3.gif) |
+| ![2](imgs/S3DIS_area2.gif)   | ![z](imgs/S3DIS_area3.gif) |
 | ------------------------------ | ---------------------------- |
 
 
@@ -91,8 +91,9 @@ Quantitative results of different approaches on Semantic3D (reduced-8):
 
 Qualitative results of our RandLA-Net:
 
-| ![z](http://randla-net.cs.ox.ac.uk/imgs/Semantic3D-1.gif)    | ![z](http://randla-net.cs.ox.ac.uk/imgs/Semantic3D-2.gif)   |
+| ![z](imgs/Semantic3D-1.gif)    | ![z](http://randla-net.cs.ox.ac.uk/imgs/Semantic3D-2.gif)   |
 | -------------------------------- | ------------------------------- |
+| ![z](imgs/Semantic3D-3.gif)    | ![z](imgs/Semantic3D-4.gif)   |
 
 
 
@@ -127,12 +128,12 @@ Quantitative results of different approaches on SemanticKITTI dataset:
 
 Qualitative results of our RandLA-Net:
 
-![zzz](http://randla-net.cs.ox.ac.uk/imgs/SemanticKITTI-2.gif)    
+![zzz](imgs/SemanticKITTI-2.gif)    
 
 
 ### (5) Demo
 
-<p align="center"> <a href="https://youtu.be/Ar3eY_lwzMk"><img src="http://randla-net.cs.ox.ac.uk/imgs/demo_cover.png" width="50%"></a> </p>
+<p align="center"> <a href="https://youtu.be/Ar3eY_lwzMk"><img src="http://randla-net.cs.ox.ac.uk/imgs/demo_cover.png" width="80%"></a> </p>
 
 
 ### Citation
@@ -160,3 +161,10 @@ Licensed under the CC BY-NC-SA 4.0 license, see [LICENSE](./LICENSE).
 * 21/03/2020: Adding pretrained models and results
 * 02/03/2020: Code available!
 * 15/11/2019: Initial release！
+
+## Related Repos
+1. [SoTA-Point-Cloud: Deep Learning for 3D Point Clouds: A Survey](https://github.com/QingyongHu/SoTA-Point-Cloud) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SoTA-Point-Cloud.svg?style=flat&label=Star)
+2. [SensatUrban: Learning Semantics from Urban-Scale Photogrammetric Point Clouds](https://github.com/QingyongHu/SpinNet) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SensatUrban.svg?style=flat&label=Star)
+3. [3D-BoNet: Learning Object Bounding Boxes for 3D Instance Segmentation on Point Clouds](https://github.com/Yang7879/3D-BoNet) ![GitHub stars](https://img.shields.io/github/stars/Yang7879/3D-BoNet.svg?style=flat&label=Star)
+4. [SpinNet: Learning a General Surface Descriptor for 3D Point Cloud Registration](https://github.com/QingyongHu/SpinNet) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SpinNet.svg?style=flat&label=Star)
+
